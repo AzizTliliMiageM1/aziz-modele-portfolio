@@ -478,6 +478,60 @@ document.addEventListener('DOMContentLoaded', () => {
     ScrollTrigger.refresh();
   });
 
+  /* ---------- Chapter navigation: land where the story is settled, not on a blank first frame ----------
+     Each pinned chapter starts empty and reveals as you scrub through it. A nav click that
+     dumps a visitor at the raw start of that scrub (title only, nothing else) feels broken and
+     traps them into scrolling blindly to "unlock" the content. Instead, jump straight to the
+     point in that chapter's timeline where everything relevant is already visible, while still
+     leaving room to scroll further in either direction and keep exploring at their own pace. */
+  const CHAPTER_REVEAL_FRACTION = {
+    genesis: 0.75,
+    archive: 0.65,
+    book: 0.92,
+    frame: 0.45,
+    transformation: 0.75,
+    profile: 0.88,
+  };
+
+  function scrollToChapter(name) {
+    const chapter = document.querySelector(`[data-chapter-name="${name}"]`);
+    if (!chapter) return;
+
+    const st = hasGsap
+      ? ScrollTrigger.getAll().find((s) => s.pin && s.trigger === chapter)
+      : null;
+
+    const fraction = CHAPTER_REVEAL_FRACTION[name];
+    const targetY = st && fraction !== undefined
+      ? st.start + (st.end - st.start) * fraction
+      : chapter.getBoundingClientRect().top + window.scrollY;
+
+    if (lenis) {
+      lenis.scrollTo(targetY, { duration: 1.1 });
+    } else {
+      window.scrollTo({ top: targetY, behavior: 'smooth' });
+    }
+  }
+
+  document.querySelectorAll('a[href^="#"]').forEach((link) => {
+    const name = link.getAttribute('href').slice(1);
+    if (!document.querySelector(`[data-chapter-name="${name}"]`)) return;
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      scrollToChapter(name);
+      history.pushState(null, '', `#${name}`);
+    });
+  });
+
+  /* Landing directly on a #chapter URL (shared link, bookmark, refresh) should behave the same way */
+  if (location.hash) {
+    const initialName = location.hash.slice(1);
+    if (document.querySelector(`[data-chapter-name="${initialName}"]`)) {
+      window.scrollTo(0, 0);
+      setTimeout(() => scrollToChapter(initialName), 250);
+    }
+  }
+
   /* ---------- Contact form: real submission via FormSubmit ---------- */
   const contactForm = document.querySelector('.contact-form');
   if (contactForm) {
