@@ -1,6 +1,6 @@
 # Aziz Modele — Portfolio
 
-A cinematic, scroll-driven editorial portfolio experience for a model persona.
+An editorial model portfolio built as a lightweight static site. The visual selection uses optimized derivatives of the photographs supplied in `PP/`.
 
 ## Project structure
 
@@ -8,21 +8,24 @@ A cinematic, scroll-driven editorial portfolio experience for a model persona.
 index.html
 styles.css
 script.js
-Tal/               # photography used across the chapters
+PP/optimized/       # resized JPEGs used by the site
 ```
 
-## Local launch
+## Local preview
 
 ```bash
 python -m http.server 8000
 ```
 
-Then open <http://localhost:8000> in the browser.
+Open <http://localhost:8000> in a browser. There is no build step or runtime framework.
 
-## Design system
+## Features
 
-This portfolio uses a dark gallery palette, editorial serif typography, and GSAP/ScrollTrigger/Lenis-driven scroll storytelling inspired by art direction in fashion and photography.
+- Responsive editorial layout with a touch-friendly mobile menu.
+- Accessible photo lightbox with keyboard and swipe navigation.
+- Reduced-motion support and lazy-loaded gallery images.
+- Contact form powered by FormSubmit.
 
 ## Deployment
 
-Static site, no build step — deployable as-is to GitHub Pages, Netlify, Vercel or Cloudflare Pages.
+GitHub Pages serves the root of the `master` branch. Push commits to publish updates.

@@ -1,3 +1,6 @@
-PP/
+Tal/
+PP/*
+!PP/optimized/
+!PP/optimized/**
 .DS_Store
 Thumbs.db

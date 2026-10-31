@@ -2,366 +2,170 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Aziz Modele — film de mode interactif" />
-  <title>Aziz Modele — Interactive Fashion Film</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f4f3ee" />
+  <meta name="description" content="Aziz Modele — portfolio de mannequin indépendant. Portraits, éditorial et bookings." />
+  <meta property="og:title" content="Aziz Modele — Portfolio" />
+  <meta property="og:description" content="Une sélection de portraits et d'images d'Aziz Modele." />
+  <meta property="og:image" content="PP/optimized/01-rooftop.jpg" />
+  <title>Aziz Modele — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <div class="grain" aria-hidden="true"></div>
-  <div class="cursor-dot" aria-hidden="true"></div>
-  <div class="cursor-ring" aria-hidden="true"></div>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
 
-  <div class="progress-rail" aria-hidden="true">
-    <span class="progress-rail__fill"></span>
-  </div>
-
-  <header class="site-header" data-cursor="light">
-    <a class="brand" href="#genesis">
-      <span class="brand__name">Aziz Modele</span>
-      <span class="brand__rule"></span>
-      <span class="brand__tag">Interactive Film</span>
+  <header class="site-header">
+    <a class="wordmark" href="#accueil" aria-label="Aziz Modele, accueil">
+      <span class="wordmark__monogram">AM</span>
+      <span class="wordmark__name">Aziz<br />Modele</span>
     </a>
-
-    <nav class="main-nav" aria-label="Chapitres">
-      <a class="nav-link" data-chapter="genesis" href="#genesis"><span>01</span>Genesis</a>
-      <a class="nav-link" data-chapter="archive" href="#archive"><span>02</span>Discovery</a>
-      <a class="nav-link" data-chapter="book" href="#book"><span>03</span>The Book</a>
-      <a class="nav-link" data-chapter="frame" href="#frame"><span>04</span>The Frame</a>
-      <a class="nav-link" data-chapter="transformation" href="#transformation"><span>05</span>The Room</a>
-      <a class="nav-link" data-chapter="profile" href="#profile"><span>06</span>Profile</a>
-      <a class="nav-link" data-chapter="final" href="#final"><span>07</span>Final</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation" aria-label="Ouvrir la navigation">
+      <span></span><span></span>
+    </button>
+    <nav class="site-nav" id="navigation" aria-label="Navigation principale">
+      <a href="#images">Images <span>01</span></a>
+      <a href="#profil">Profil <span>02</span></a>
+      <a href="#mensurations">Mensurations <span>03</span></a>
+      <a class="site-nav__contact" href="#contact">Contact <span aria-hidden="true">↗</span></a>
     </nav>
-
-    <a class="header-cta" href="#final">
-      <span>Contact</span>
-    </a>
   </header>
 
-  <main id="cine-root" class="cine-root">
-
-    <!-- ACT I — GENESIS: fragments of raw material assemble, breathe, then part to reveal the portrait and the name -->
-    <section class="chapter chapter--genesis" id="genesis" data-chapter-name="genesis">
-      <div class="chapter-sticky">
-        <div class="genesis-stage">
-          <div class="genesis-cue" data-genesis="cue">
-            <span class="genesis-cue__line"></span>
-          </div>
-
-          <div class="genesis-hero" data-genesis="hero">
-            <img src="Tal/arrival.jpg" alt="" />
-            <div class="genesis-hero__vignette"></div>
-          </div>
-
-          <div class="genesis-shard genesis-shard--1" data-genesis-shard="1">
-            <img src="Tal/identity-front.jpg" alt="" style="object-position: center 96%;" />
-          </div>
-          <div class="genesis-shard genesis-shard--2" data-genesis-shard="2">
-            <img src="Tal/identity-back.jpg" alt="" style="object-position: center 100%;" />
-          </div>
-          <div class="genesis-shard genesis-shard--3" data-genesis-shard="3">
-            <img src="Tal/arrival.jpg" alt="" style="object-position: center 0%;" />
-          </div>
-          <div class="genesis-shard genesis-shard--4" data-genesis-shard="4">
-            <img src="Tal/archive-1.jpg" alt="" style="object-position: center 92%;" />
-          </div>
-          <div class="genesis-shard genesis-shard--5" data-genesis-shard="5">
-            <img src="Tal/discovery-1.jpg" alt="" style="object-position: center 0%;" />
-          </div>
-          <div class="genesis-shard genesis-shard--6" data-genesis-shard="6">
-            <img src="Tal/discovery-3.jpg" alt="" style="object-position: center 12%;" />
-          </div>
-
-          <div class="genesis-copy" data-genesis="copy">
-            <span class="genesis-copy__eyebrow">Edition 2026 — Act I</span>
-            <h1 class="genesis-title">
-              <span class="genesis-title__mask"><span class="genesis-title__inner">Aziz</span></span>
-              <span class="genesis-title__mask"><span class="genesis-title__inner">Modele</span></span>
-            </h1>
-            <p class="genesis-copy__dek">Presence. Silence. Form.</p>
-          </div>
-
-          <div class="genesis-scroll-hint" data-genesis="hint">
-            <span class="genesis-scroll-hint__line"></span>
-            <span class="genesis-scroll-hint__text">Continue</span>
-          </div>
+  <main id="contenu">
+    <section class="intro" id="accueil" aria-labelledby="intro-title">
+      <div class="intro__copy" data-reveal>
+        <p class="eyebrow"><span class="eyebrow__mark"></span> Modèle indépendant <span class="eyebrow__divider">/</span> Bookings</p>
+        <h1 id="intro-title">Aziz<br /><em>Modele</em></h1>
+        <div class="intro__bottom">
+          <p>Une présence. Plusieurs façons d'habiter l'image.</p>
+          <a class="text-link" href="#images">Découvrir les images <span aria-hidden="true">↓</span></a>
         </div>
+      </div>
+      <figure class="intro__image" data-reveal>
+        <img src="PP/optimized/01-rooftop.jpg" alt="Aziz sur un toit, devant un ciel de fin de journée." fetchpriority="high" width="1650" height="2200" />
+        <figcaption><span>01</span> — Hors cadre</figcaption>
+      </figure>
+      <p class="intro__index" aria-hidden="true">Portfolio<br />2026</p>
+    </section>
+
+    <section class="work-section" id="images" aria-labelledby="images-title">
+      <div class="section-heading" data-reveal>
+        <div>
+          <p class="eyebrow"><span class="eyebrow__mark"></span> Sélection</p>
+          <h2 id="images-title">L'image<br /><em>en mouvement</em></h2>
+        </div>
+        <p class="section-heading__note">Portraits, instants et silhouettes.<br />Une sélection personnelle.</p>
+      </div>
+
+      <div class="work-grid">
+        <button class="photo-card photo-card--mono" type="button" data-photo="PP/optimized/07-monochrome.jpg" data-caption="Ligne claire — noir et blanc" data-reveal aria-label="Agrandir le portrait noir et blanc">
+          <img src="PP/optimized/07-monochrome.jpg" alt="Portrait noir et blanc d'Aziz, debout dans une lumière franche." loading="lazy" decoding="async" width="1366" height="2048" />
+          <span class="photo-card__meta"><span>02 / Portrait</span><span class="photo-card__open" aria-hidden="true">↗</span></span>
+        </button>
+
+        <button class="photo-card photo-card--blue" type="button" data-photo="PP/optimized/03-seaside.jpg" data-caption="Ligne bleue — au bord de l'eau" data-reveal aria-label="Agrandir le portrait au bord de l'eau">
+          <img src="PP/optimized/03-seaside.jpg" alt="Aziz en veste sombre devant une structure bleue au bord de l'eau." loading="lazy" decoding="async" width="2048" height="1366" />
+          <span class="photo-card__meta"><span>03 / Extérieur</span><span class="photo-card__open" aria-hidden="true">↗</span></span>
+        </button>
+
+        <div class="work-note" data-reveal>
+          <span class="work-note__number">A — 06</span>
+          <p>Le regard change.<br /><em>La présence reste.</em></p>
+          <span class="work-note__rule"></span>
+        </div>
+
+        <button class="photo-card photo-card--red" type="button" data-photo="PP/optimized/09-red-facade.jpg" data-caption="Contre-jour — façade rouge" data-reveal aria-label="Agrandir la photographie devant la façade rouge">
+          <img src="PP/optimized/09-red-facade.jpg" alt="Aziz assis devant une façade éclairée de rouge, cadrée en contre-plongée." loading="lazy" decoding="async" width="1536" height="2048" />
+          <span class="photo-card__meta"><span>04 / Architecture</span><span class="photo-card__open" aria-hidden="true">↗</span></span>
+        </button>
+
+        <button class="photo-card photo-card--moon" type="button" data-photo="PP/optimized/08-moonlight.jpg" data-caption="Après la nuit — lumière de lune" data-reveal aria-label="Agrandir le portrait de nuit sous la lune">
+          <img src="PP/optimized/08-moonlight.jpg" alt="Portrait nocturne d'Aziz sous un ciel sombre, éclairé par la lune." loading="lazy" decoding="async" width="1536" height="2048" />
+          <span class="photo-card__meta"><span>05 / Nuit</span><span class="photo-card__open" aria-hidden="true">↗</span></span>
+        </button>
+
+        <button class="photo-card photo-card--castle" type="button" data-photo="PP/optimized/10-castle.jpg" data-caption="Dernière lumière — silhouette urbaine" data-reveal aria-label="Agrandir le portrait devant le château éclairé">
+          <img src="PP/optimized/10-castle.jpg" alt="Aziz au premier plan d'une rue pavée, avec une tour éclairée en arrière-plan." loading="lazy" decoding="async" width="1536" height="2048" />
+          <span class="photo-card__meta"><span>06 / Ville</span><span class="photo-card__open" aria-hidden="true">↗</span></span>
+        </button>
+
+        <button class="photo-card photo-card--city" type="button" data-photo="PP/optimized/05-flash.jpg" data-caption="Flash direct — instant nocturne" data-reveal aria-label="Agrandir le portrait au flash de nuit">
+          <img src="PP/optimized/05-flash.jpg" alt="Portrait d'Aziz au flash dans une ambiance nocturne." loading="lazy" decoding="async" width="1600" height="1200" />
+          <span class="photo-card__meta"><span>07 / Instantané</span><span class="photo-card__open" aria-hidden="true">↗</span></span>
+        </button>
       </div>
     </section>
 
-    <!-- CHAPTER 02 — ARCHIVE (horizontal camera pan, cursor + scroll drive it) -->
-    <section class="chapter chapter--archive" id="archive" data-chapter-name="archive">
-      <div class="chapter-sticky">
-        <div class="archive-stage">
-          <span class="archive-edge archive-edge--left" aria-hidden="true"></span>
-          <span class="archive-edge archive-edge--right" aria-hidden="true"></span>
-
-          <div class="archive-heading" data-archive="heading">
-            <span class="chapter-index">02 / Discovery</span>
-            <span class="archive-heading__eyebrow">From composition to candid</span>
-            <h2 class="archive-heading__title">The<br />Discovery</h2>
-          </div>
-
-          <div class="archive-cue" data-archive="cue">
-            <span class="archive-cue__text">Move your cursor</span>
-            <span class="archive-cue__arrow">↔</span>
-          </div>
-
-          <div class="archive-track-wrap">
-            <div class="archive-track" data-archive="track">
-              <div class="archive-track__cursor" data-archive="cursor-layer">
-              <article class="archive-card archive-card--a">
-                <div class="archive-card__image">
-                  <img src="Tal/archive-1.jpg" alt="" />
-                </div>
-                <div class="archive-card__meta">
-                  <span class="archive-card__no">01</span>
-                  <span class="archive-card__title">Daylight</span>
-                </div>
-              </article>
-
-              <article class="archive-card archive-card--b">
-                <div class="archive-card__image">
-                  <img src="Tal/archive-2.jpg" alt="" />
-                </div>
-                <div class="archive-card__meta">
-                  <span class="archive-card__no">02</span>
-                  <span class="archive-card__title">Night Energy</span>
-                </div>
-              </article>
-
-              <article class="archive-card archive-card--c">
-                <div class="archive-card__image">
-                  <img src="Tal/archive-3.jpg" alt="" />
-                </div>
-                <div class="archive-card__meta">
-                  <span class="archive-card__no">03</span>
-                  <span class="archive-card__title">Off Duty</span>
-                </div>
-              </article>
-
-              <article class="archive-card archive-card--d">
-                <div class="archive-card__image">
-                  <img src="Tal/archive-4.jpg" alt="" />
-                </div>
-                <div class="archive-card__meta">
-                  <span class="archive-card__no">04</span>
-                  <span class="archive-card__title">Candid Frame</span>
-                </div>
-              </article>
-
-              <article class="archive-card archive-card--e">
-                <div class="archive-card__image">
-                  <img src="Tal/archive-5.jpg" alt="" />
-                </div>
-                <div class="archive-card__meta">
-                  <span class="archive-card__no">05</span>
-                  <span class="archive-card__title">Open Air</span>
-                </div>
-              </article>
-              </div>
-            </div>
-          </div>
-        </div>
+    <section class="profile-section" id="profil" aria-labelledby="profil-title">
+      <div class="profile-section__image" data-reveal>
+        <img src="PP/optimized/07-monochrome.jpg" alt="Portrait en pied d'Aziz en noir et blanc." loading="lazy" decoding="async" width="1366" height="2048" />
+        <span class="profile-section__image-note">Portrait / 07</span>
+      </div>
+      <div class="profile-section__copy" data-reveal>
+        <p class="eyebrow"><span class="eyebrow__mark"></span> À propos</p>
+        <h2 id="profil-title">Le calme<br />comme <em>langage.</em></h2>
+        <p class="profile-section__lead">Un travail de présence, de proportion et d'attention à la lumière.</p>
+        <p class="profile-section__body">À travers le portrait, l'éditorial et les images du quotidien, ce portfolio explore différentes facettes d'une même identité — sans surjouer le geste.</p>
+        <a class="text-link" href="#mensurations">Voir le profil professionnel <span aria-hidden="true">↓</span></a>
       </div>
     </section>
 
-    <!-- CHAPTER 05 — THE BOOK (a literal book that opens and turns pages) -->
-    <section class="chapter chapter--book" id="book" data-chapter-name="book">
-      <div class="chapter-sticky">
-        <div class="book3d-stage">
-          <span class="chapter-index" data-book3d="index">03 / The Book</span>
-          <h2 class="book3d-heading" data-book3d="heading">The visual<br />archive</h2>
-
-          <div class="book3d" data-book3d="book">
-            <span class="book3d__spine" aria-hidden="true"></span>
-
-            <div class="book3d__leaf book3d__leaf--cover" data-book3d-leaf="cover">
-              <div class="book3d__cover-face">
-                <span class="book3d__cover-kicker">Aziz Modele</span>
-                <span class="book3d__cover-title">The<br />Book</span>
-                <span class="book3d__cover-year">2026</span>
-              </div>
-            </div>
-
-            <div class="book3d__leaf book3d__leaf--spread" data-book3d-leaf="spread-1">
-              <div class="book3d__page book3d__page--left">
-                <img src="Tal/identity-front.jpg" alt="" />
-                <span class="book3d__page-caption">01 — Contour</span>
-              </div>
-              <div class="book3d__page book3d__page--right">
-                <img src="Tal/arrival.jpg" alt="" />
-                <span class="book3d__page-caption">02 — Balance</span>
-              </div>
-            </div>
-
-            <div class="book3d__leaf book3d__leaf--spread" data-book3d-leaf="spread-2">
-              <div class="book3d__page book3d__page--left">
-                <img src="Tal/discovery-1.jpg" alt="" />
-                <span class="book3d__page-caption">03 — Silhouette</span>
-              </div>
-              <div class="book3d__page book3d__page--right">
-                <img src="Tal/identity-back.jpg" alt="" />
-                <span class="book3d__page-caption">04 — Frame 04</span>
-              </div>
-            </div>
-
-            <div class="book3d__leaf book3d__leaf--back" data-book3d-leaf="back">
-              <div class="book3d__page book3d__page--full">
-                <img src="Tal/discovery-2.jpg" alt="" />
-                <span class="book3d__page-caption">05 — Afterlight</span>
-              </div>
-            </div>
-          </div>
-        </div>
+    <section class="details-section" id="mensurations" aria-labelledby="details-title">
+      <div class="details-section__intro" data-reveal>
+        <p class="eyebrow"><span class="eyebrow__mark"></span> Informations</p>
+        <h2 id="details-title">Profil<br /><em>professionnel</em></h2>
+        <p>Informations de booking et mensurations.</p>
       </div>
+      <dl class="details-list" data-reveal>
+        <div><dt>Taille</dt><dd>183 cm</dd></div>
+        <div><dt>Poids</dt><dd>78 kg</dd></div>
+        <div><dt>Silhouette</dt><dd>Athlétique, tonique</dd></div>
+        <div><dt>Représentation</dt><dd>Indépendant / Bookings</dd></div>
+        <div><dt>Disponibilité</dt><dd>Sur demande</dd></div>
+      </dl>
     </section>
 
-    <!-- CHAPTER 04 — THE FRAME (the camera stops; one photograph is simply looked at) -->
-    <section class="chapter chapter--frame" id="frame" data-chapter-name="frame">
-      <div class="chapter-sticky">
-        <div class="frame-stage">
-          <span class="chapter-index" data-frame="index">04 / The Frame</span>
-
-          <div class="frame-photo" data-frame="photo">
-            <img src="Tal/discovery-2.jpg" alt="" />
-          </div>
-
-          <div class="frame-caption" data-frame="caption">
-            <span class="frame-caption__eyebrow">A pause, deliberately</span>
-            <h2 class="frame-caption__title">Some frames<br />ask nothing of you</h2>
-          </div>
-        </div>
+    <section class="contact-section" id="contact" aria-labelledby="contact-title">
+      <div class="contact-section__intro" data-reveal>
+        <p class="eyebrow"><span class="eyebrow__mark"></span> Projets & bookings</p>
+        <h2 id="contact-title">Parlons<br /><em>du prochain.</em></h2>
+        <a class="contact-email" href="mailto:aziz.tlili900@gmail.com">aziz.tlili900@gmail.com <span aria-hidden="true">↗</span></a>
       </div>
-    </section>
-
-    <!-- CHAPTER 05 — THE ROOM -->
-    <section class="chapter chapter--transformation" id="transformation" data-chapter-name="transformation">
-      <div class="chapter-sticky">
-        <div class="transform-stage">
-          <span class="chapter-index" data-transform="index">05 / The Room</span>
-
-          <div class="transform-frame" data-transform="frame">
-            <img src="Tal/identity-front.jpg" alt="" />
-          </div>
-
-          <div class="transform-copy" data-transform="copy">
-            <h2 class="transform-title">Enter the<br />room</h2>
-          </div>
-
-          <div class="transform-reveal" data-transform="reveal">
-            <div class="transform-reveal__grid">
-              <span class="transform-reveal__eyebrow">Chapter 05 — Continued</span>
-              <h3 class="transform-reveal__title">The image<br />becomes the room</h3>
-              <p class="transform-reveal__text">
-                The photograph is no longer an object on the page. It is the space
-                the visitor now stands inside.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CHAPTER 06 — PROFILE (the story returns to the person) -->
-    <section class="chapter chapter--profile" id="profile" data-chapter-name="profile">
-      <div class="chapter-sticky">
-        <div class="profile-stage">
-          <span class="chapter-index" data-profile="index">06 / Profile</span>
-
-          <div class="profile-portrait" data-profile="portrait">
-            <img src="Tal/discovery-3.jpg" alt="" />
-            <span class="profile-portrait__index">/ 2026</span>
-          </div>
-
-          <div class="profile-copy" data-profile="copy">
-            <h2 class="profile-title">Aziz<br />Modele</h2>
-            <p class="profile-intro">
-              A portfolio built on stillness, proportion and quiet attention to light —
-              rather than performance.
-            </p>
-            <div class="profile-detail-list">
-              <div class="profile-detail">
-                <span class="profile-detail__label">Height / Weight</span>
-                <span class="profile-detail__value">183 cm / 78 kg</span>
-              </div>
-              <div class="profile-detail">
-                <span class="profile-detail__label">Build</span>
-                <span class="profile-detail__value">Athletic, toned</span>
-              </div>
-              <div class="profile-detail">
-                <span class="profile-detail__label">Representation</span>
-                <span class="profile-detail__value">Independent / Bookings</span>
-              </div>
-              <div class="profile-detail">
-                <span class="profile-detail__label">Availability</span>
-                <span class="profile-detail__value">On request</span>
-              </div>
-            </div>
-            <a class="button-link" href="#final" data-profile="cta">
-              <span>Get in touch</span>
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M12 4l8 8-8 8" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CHAPTER 07 — FINAL FRAME -->
-    <section class="chapter chapter--final" id="final" data-chapter-name="final">
-      <div class="final-stage">
-        <div class="final-contact">
-          <div class="final-contact__intro">
-            <span class="chapter-index">07 / Final Frame</span>
-            <h2 class="final-title">Book the<br />image</h2>
-            <p class="final-contact__text">
-              For fashion editorials, campaigns, castings and creative collaborations.
-            </p>
-          </div>
-
-          <form class="contact-form" action="https://formsubmit.co/ajax/aziz.tlili900@gmail.com" method="POST">
-            <input type="hidden" name="_subject" value="Nouvelle demande — Portfolio Aziz Modele" />
-            <input type="hidden" name="_template" value="table" />
-            <input type="hidden" name="_captcha" value="false" />
-            <div class="form-row">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" placeholder="Your name" required />
-            </div>
-            <div class="form-row">
-              <label for="email">E-mail</label>
-              <input type="email" id="email" name="email" placeholder="name@email.com" required />
-            </div>
-            <div class="form-row">
-              <label for="message">Project</label>
-              <textarea id="message" name="message" placeholder="Project details" required></textarea>
-            </div>
-            <button class="form-submit" type="submit">
-              <span class="form-submit__text">Send Inquiry</span>
-            </button>
-          </form>
-        </div>
-
-        <footer class="site-footer">
-          <span class="footer-brand">Aziz Modele</span>
-          <span class="footer-line"></span>
-          <span class="footer-links">
-            <a href="#genesis">Portfolio</a>
-            <a href="#archive">Discovery</a>
-            <a href="#book">Book</a>
-            <a href="#profile">Profile</a>
-            <a href="#final">Contact</a>
-          </span>
-        </footer>
-      </div>
+      <form class="contact-form" action="https://formsubmit.co/ajax/aziz.tlili900@gmail.com" method="POST" data-reveal>
+        <input type="hidden" name="_subject" value="Nouvelle demande — Portfolio Aziz Modele" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
+        <label for="name">Votre nom</label>
+        <input id="name" name="name" type="text" autocomplete="name" placeholder="Nom" required />
+        <label for="email">Votre e-mail</label>
+        <input id="email" name="email" type="email" autocomplete="email" placeholder="nom@exemple.com" required />
+        <label for="message">Votre projet</label>
+        <textarea id="message" name="message" rows="3" placeholder="Quelques mots sur le projet" required></textarea>
+        <button class="submit-button" type="submit"><span>Envoyer le message</span><span aria-hidden="true">↗</span></button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
     </section>
   </main>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
-  <script src="script.js"></script>
+  <dialog class="lightbox" aria-label="Photographie agrandie">
+    <button class="lightbox__close" type="button" aria-label="Fermer la photographie">Fermer <span aria-hidden="true">×</span></button>
+    <button class="lightbox__step lightbox__step--previous" type="button" aria-label="Photographie précédente">←</button>
+    <figure class="lightbox__figure">
+      <img class="lightbox__image" alt="" />
+      <figcaption class="lightbox__caption"></figcaption>
+    </figure>
+    <button class="lightbox__step lightbox__step--next" type="button" aria-label="Photographie suivante">→</button>
+    <span class="lightbox__count" aria-live="polite"></span>
+  </dialog>
+
+  <footer class="site-footer">
+    <a class="wordmark wordmark--footer" href="#accueil"><span class="wordmark__monogram">AM</span><span class="wordmark__name">Aziz<br />Modele</span></a>
+    <span>Modèle indépendant · Bookings</span>
+    <a href="#accueil" class="back-to-top">Retour en haut ↑</a>
+    <span class="site-footer__copyright">© 2026</span>
+  </footer>
 </body>
 </html>
