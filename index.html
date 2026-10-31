@@ -1,171 +1,208 @@
 <!doctype html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#f4f3ee" />
-  <meta name="description" content="Aziz Modele — portfolio de mannequin indépendant. Portraits, éditorial et bookings." />
-  <meta property="og:title" content="Aziz Modele — Portfolio" />
-  <meta property="og:description" content="Une sélection de portraits et d'images d'Aziz Modele." />
+  <meta name="theme-color" content="#101611" />
+  <meta name="description" content="Aziz Modele — independent model portfolio. Portrait, editorial, and booking information." />
+  <meta property="og:title" content="Aziz Modele — Visual Dossier" />
+  <meta property="og:description" content="Selected portraits and image studies by Aziz Modele." />
   <meta property="og:image" content="PP/optimized/01-rooftop.jpg" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <title>Aziz Modele — Portfolio</title>
+  <title>Aziz Modele — Visual Dossier</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-  <script src="script.js" defer></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script defer src="script.js"></script>
 </head>
 <body>
-  <a class="skip-link" href="#contenu">Aller au contenu</a>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <div class="page-progress" aria-hidden="true"><span></span></div>
 
   <header class="site-header">
-    <a class="wordmark" href="#accueil" aria-label="Aziz Modele, accueil">
-      <span class="wordmark__monogram">AM</span>
-      <span class="wordmark__name">Aziz<br />Modele</span>
+    <a class="brand" href="#home" aria-label="Aziz Modele, home">
+      <span class="brand__symbol">AM<span>/</span></span>
+      <span class="brand__name">Aziz<br />Modele</span>
     </a>
-    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation" aria-label="Ouvrir la navigation">
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Open navigation">
       <span></span><span></span>
     </button>
-    <nav class="site-nav" id="navigation" aria-label="Navigation principale">
-      <a href="#images">Images <span>01</span></a>
-      <a href="#profil">Profil <span>02</span></a>
-      <a href="#mensurations">Mensurations <span>03</span></a>
-      <a class="site-nav__contact" href="#contact">Contact <span aria-hidden="true">↗</span></a>
+    <nav class="site-nav" id="main-nav" aria-label="Main navigation">
+      <a href="#images"><span class="nav-index">01</span> Images</a>
+      <a href="#profile"><span class="nav-index">02</span> Profile</a>
+      <a href="#details"><span class="nav-index">03</span> Details</a>
+      <a class="site-nav__contact" href="#contact">Bookings <span aria-hidden="true">↗</span></a>
     </nav>
   </header>
 
-  <main id="contenu">
-    <section class="intro" id="accueil" aria-labelledby="intro-title">
-      <div class="intro__copy" data-reveal>
-        <p class="eyebrow"><span class="eyebrow__mark"></span> Modèle indépendant <span class="eyebrow__divider">/</span> Bookings</p>
-        <h1 id="intro-title"><span class="intro__title-line"><span>Aziz</span></span><span class="intro__title-line intro__title-line--second"><span><em>Modele</em></span></span></h1>
-        <div class="intro__bottom">
-          <p>Une présence. Plusieurs façons d'habiter l'image.</p>
-          <a class="text-link" href="#images">Découvrir les images <span aria-hidden="true">↓</span></a>
+  <main id="content">
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="hero__grid" aria-hidden="true"></div>
+      <div class="hero__copy">
+        <p class="eyebrow hero__eyebrow"><span class="signal-dot"></span> Independent model <span class="eyebrow__slash">/</span> Bookings</p>
+        <h1 id="hero-title">
+          <span class="hero-title__line"><span>AZIZ</span></span>
+          <span class="hero-title__line hero-title__line--accent"><span>MODELE</span></span>
+        </h1>
+        <p class="hero__statement">Presence<br />in a different light.</p>
+        <div class="hero__actions">
+          <a class="action-link" href="#images">Explore the frames <span aria-hidden="true">↓</span></a>
+          <span class="hero__edition">Visual dossier / 01</span>
         </div>
       </div>
-      <figure class="intro__image" data-reveal>
-        <img src="PP/optimized/01-rooftop.jpg" alt="Aziz sur un toit, devant un ciel de fin de journée." fetchpriority="high" width="1650" height="2200" />
-        <figcaption><span>01</span> — Hors cadre</figcaption>
+
+      <figure class="hero__visual">
+        <img class="hero__photo" src="PP/optimized/01-rooftop.jpg" alt="Aziz standing above the rooftops against an open evening sky." fetchpriority="high" width="1650" height="2200" />
+        <span class="hero__visual-index" aria-hidden="true">AM—001</span>
+        <figcaption class="hero__caption"><span>FRAME 01</span><span>OPEN AIR / STILL FORM</span></figcaption>
       </figure>
+
+      <div class="hero__measure" aria-hidden="true"><span>183 CM</span><span>78 KG</span><span>INDEPENDENT</span></div>
+      <a class="hero__scroll" href="#images" aria-label="Scroll to selected images"><span></span> Scroll to explore</a>
     </section>
 
+    <div class="signal-strip" aria-label="Aziz Modele visual dossier">
+      <div class="signal-strip__track" aria-hidden="true">
+        <span>AZIZ MODELE</span><i>✳</i><span>VISUAL DOSSIER</span><i>✳</i><span>FORM / LIGHT / MOTION</span><i>✳</i><span>AZIZ MODELE</span><i>✳</i><span>VISUAL DOSSIER</span><i>✳</i><span>FORM / LIGHT / MOTION</span><i>✳</i>
+      </div>
+    </div>
+
     <section class="work-section" id="images" aria-labelledby="images-title">
-      <div class="section-heading" data-reveal>
-        <div>
-          <p class="eyebrow"><span class="eyebrow__mark"></span> Sélection</p>
-          <h2 id="images-title">L'image<br /><em>en mouvement</em></h2>
+      <div class="section-heading" data-motion="heading">
+        <div class="section-heading__title-wrap">
+          <p class="eyebrow"><span class="signal-dot"></span> Selected images / 01—06</p>
+          <h2 id="images-title"><span>LOOK</span><em>BOOK</em></h2>
         </div>
-        <p class="section-heading__note">Portraits, instants et silhouettes.<br />Une sélection personnelle.</p>
+        <p class="section-heading__note">Portrait, silhouette, after dark.<br />A study in changing atmospheres.</p>
       </div>
 
       <div class="work-grid">
-        <button class="photo-card photo-card--mono" type="button" data-photo="PP/optimized/07-monochrome.jpg" data-caption="Ligne claire — noir et blanc" data-reveal aria-label="Agrandir le portrait noir et blanc">
-          <img src="PP/optimized/07-monochrome.jpg" alt="Portrait noir et blanc d'Aziz, debout dans une lumière franche." loading="lazy" decoding="async" width="1366" height="2048" />
-          <span class="photo-card__meta"><span>02 / Portrait</span><span class="photo-card__open" aria-hidden="true">↗</span></span>
+        <button class="look look--mono" type="button" data-motion="photo" data-photo="PP/optimized/07-monochrome.jpg" data-caption="01 / Form study — monochrome" aria-label="Open monochrome form study">
+          <img src="PP/optimized/07-monochrome.jpg" alt="Full-length black-and-white portrait of Aziz in direct sunlight." loading="lazy" decoding="async" width="1366" height="2048" />
+          <span class="look__index">01</span>
+          <span class="look__caption"><span>FORM STUDY</span><span>MONO / 01</span></span>
+          <span class="look__open" aria-hidden="true">↗</span>
         </button>
 
-        <button class="photo-card photo-card--blue" type="button" data-photo="PP/optimized/03-seaside.jpg" data-caption="Ligne bleue — au bord de l'eau" data-reveal aria-label="Agrandir le portrait au bord de l'eau">
-          <img src="PP/optimized/03-seaside.jpg" alt="Aziz en veste sombre devant une structure bleue au bord de l'eau." loading="lazy" decoding="async" width="2048" height="1366" />
-          <span class="photo-card__meta"><span>03 / Extérieur</span><span class="photo-card__open" aria-hidden="true">↗</span></span>
+        <button class="look look--coast" type="button" data-motion="photo" data-photo="PP/optimized/03-seaside.jpg" data-caption="02 / Blue hour — open air" aria-label="Open blue hour portrait by the water">
+          <img src="PP/optimized/03-seaside.jpg" alt="Aziz in a dark jacket beside the water and a blue structure." loading="lazy" decoding="async" width="2048" height="1366" />
+          <span class="look__index">02</span>
+          <span class="look__caption"><span>BLUE HOUR</span><span>OPEN AIR / 02</span></span>
+          <span class="look__open" aria-hidden="true">↗</span>
         </button>
 
-        <div class="work-note" data-reveal>
-          <span class="work-note__number">A — 06</span>
-          <p>Le regard change.<br /><em>La présence reste.</em></p>
+        <div class="work-note" aria-label="Visual note">
+          <span class="work-note__index">FIELD NOTE / 03</span>
+          <p>One presence.<br /><em>New coordinates.</em></p>
           <span class="work-note__rule"></span>
+          <span class="work-note__coordinates">LIGHT 48° / FORM 06°</span>
         </div>
 
-        <button class="photo-card photo-card--red" type="button" data-photo="PP/optimized/09-red-facade.jpg" data-caption="Contre-jour — façade rouge" data-reveal aria-label="Agrandir la photographie devant la façade rouge">
-          <img src="PP/optimized/09-red-facade.jpg" alt="Aziz assis devant une façade éclairée de rouge, cadrée en contre-plongée." loading="lazy" decoding="async" width="1536" height="2048" />
-          <span class="photo-card__meta"><span>04 / Architecture</span><span class="photo-card__open" aria-hidden="true">↗</span></span>
+        <button class="look look--red" type="button" data-motion="photo" data-photo="PP/optimized/09-red-facade.jpg" data-caption="03 / Signal red — architecture" aria-label="Open portrait in red architectural light">
+          <img src="PP/optimized/09-red-facade.jpg" alt="Aziz seated beneath a vivid red-lit facade." loading="lazy" decoding="async" width="1536" height="2048" />
+          <span class="look__index">03</span>
+          <span class="look__caption"><span>SIGNAL RED</span><span>ARCHITECTURE / 03</span></span>
+          <span class="look__open" aria-hidden="true">↗</span>
         </button>
 
-        <button class="photo-card photo-card--moon" type="button" data-photo="PP/optimized/08-moonlight.jpg" data-caption="Après la nuit — lumière de lune" data-reveal aria-label="Agrandir le portrait de nuit sous la lune">
-          <img src="PP/optimized/08-moonlight.jpg" alt="Portrait nocturne d'Aziz sous un ciel sombre, éclairé par la lune." loading="lazy" decoding="async" width="1536" height="2048" />
-          <span class="photo-card__meta"><span>05 / Nuit</span><span class="photo-card__open" aria-hidden="true">↗</span></span>
+        <button class="look look--moon" type="button" data-motion="photo" data-photo="PP/optimized/08-moonlight.jpg" data-caption="04 / Lunar frame — after dark" aria-label="Open portrait beneath the night sky">
+          <img src="PP/optimized/08-moonlight.jpg" alt="Night portrait of Aziz beneath a dark sky and the moon." loading="lazy" decoding="async" width="1536" height="2048" />
+          <span class="look__index">04</span>
+          <span class="look__caption"><span>LUNAR FRAME</span><span>AFTER DARK / 04</span></span>
+          <span class="look__open" aria-hidden="true">↗</span>
         </button>
 
-        <button class="photo-card photo-card--castle" type="button" data-photo="PP/optimized/10-castle.jpg" data-caption="Dernière lumière — silhouette urbaine" data-reveal aria-label="Agrandir le portrait devant le château éclairé">
-          <img src="PP/optimized/10-castle.jpg" alt="Aziz au premier plan d'une rue pavée, avec une tour éclairée en arrière-plan." loading="lazy" decoding="async" width="1536" height="2048" />
-          <span class="photo-card__meta"><span>06 / Ville</span><span class="photo-card__open" aria-hidden="true">↗</span></span>
+        <button class="look look--tower" type="button" data-motion="photo" data-photo="PP/optimized/10-castle.jpg" data-caption="05 / Night geometry — city study" aria-label="Open night portrait with the illuminated tower">
+          <img src="PP/optimized/10-castle.jpg" alt="Aziz in the foreground of a night street, with an illuminated tower behind him." loading="lazy" decoding="async" width="1536" height="2048" />
+          <span class="look__index">05</span>
+          <span class="look__caption"><span>NIGHT GEOMETRY</span><span>CITY STUDY / 05</span></span>
+          <span class="look__open" aria-hidden="true">↗</span>
         </button>
 
-        <button class="photo-card photo-card--city" type="button" data-photo="PP/optimized/05-flash.jpg" data-caption="Flash direct — instant nocturne" data-reveal aria-label="Agrandir le portrait au flash de nuit">
-          <img src="PP/optimized/05-flash.jpg" alt="Portrait d'Aziz au flash dans une ambiance nocturne." loading="lazy" decoding="async" width="1600" height="1200" />
-          <span class="photo-card__meta"><span>07 / Instantané</span><span class="photo-card__open" aria-hidden="true">↗</span></span>
+        <button class="look look--flash" type="button" data-motion="photo" data-photo="PP/optimized/05-flash.jpg" data-caption="06 / Direct flash — instant study" aria-label="Open direct flash portrait">
+          <img src="PP/optimized/05-flash.jpg" alt="Direct flash portrait of Aziz at night." loading="lazy" decoding="async" width="1600" height="1200" />
+          <span class="look__index">06</span>
+          <span class="look__caption"><span>DIRECT FLASH</span><span>INSTANT STUDY / 06</span></span>
+          <span class="look__open" aria-hidden="true">↗</span>
         </button>
       </div>
     </section>
 
-    <section class="profile-section" id="profil" aria-labelledby="profil-title">
-      <div class="profile-section__image" data-reveal>
-        <img src="PP/optimized/07-monochrome.jpg" alt="Portrait en pied d'Aziz en noir et blanc." loading="lazy" decoding="async" width="1366" height="2048" />
-        <span class="profile-section__image-note">Portrait / 07</span>
+    <section class="profile-section" id="profile" aria-labelledby="profile-title">
+      <div class="profile-section__header">
+        <p class="eyebrow"><span class="signal-dot"></span> Identity file / AM—07</p>
+        <span class="profile-section__stamp">PROFILE<br />01:01</span>
       </div>
-      <div class="profile-section__copy" data-reveal>
-        <p class="eyebrow"><span class="eyebrow__mark"></span> À propos</p>
-        <h2 id="profil-title">Le calme<br />comme <em>langage.</em></h2>
-        <p class="profile-section__lead">Un travail de présence, de proportion et d'attention à la lumière.</p>
-        <p class="profile-section__body">À travers le portrait, l'éditorial et les images du quotidien, ce portfolio explore différentes facettes d'une même identité — sans surjouer le geste.</p>
-        <a class="text-link" href="#mensurations">Voir le profil professionnel <span aria-hidden="true">↓</span></a>
+      <div class="profile-section__body">
+        <figure class="profile-section__image">
+          <img src="PP/optimized/07-monochrome.jpg" alt="Black-and-white full-length portrait of Aziz." loading="lazy" decoding="async" width="1366" height="2048" />
+          <figcaption>FORM / MONOCHROME / 01</figcaption>
+        </figure>
+        <div class="profile-section__copy">
+          <p class="profile-section__kicker">The subject is never static.</p>
+          <h2 id="profile-title" data-motion="heading">A study<br />in <em>presence.</em></h2>
+          <p>Portrait, editorial and everyday frames, considered through line, light and the way a person occupies space.</p>
+          <a class="action-link action-link--dark" href="#details">Open profile data <span aria-hidden="true">↓</span></a>
+        </div>
       </div>
     </section>
 
-    <section class="details-section" id="mensurations" aria-labelledby="details-title">
-      <div class="details-section__intro" data-reveal>
-        <p class="eyebrow"><span class="eyebrow__mark"></span> Informations</p>
-        <h2 id="details-title">Profil<br /><em>professionnel</em></h2>
-        <p>Informations de booking et mensurations.</p>
+    <section class="details-section" id="details" aria-labelledby="details-title">
+      <div class="details-section__intro">
+        <p class="eyebrow"><span class="signal-dot"></span> Booking data / 01</p>
+        <h2 id="details-title" data-motion="heading">PROFILE<br /><em>SPEC.</em></h2>
+        <p>Independent representation / bookings on request.</p>
       </div>
-      <dl class="details-list" data-reveal>
-        <div><dt>Taille</dt><dd>183 cm</dd></div>
-        <div><dt>Poids</dt><dd>78 kg</dd></div>
-        <div><dt>Silhouette</dt><dd>Athlétique, tonique</dd></div>
-        <div><dt>Représentation</dt><dd>Indépendant / Bookings</dd></div>
-        <div><dt>Disponibilité</dt><dd>Sur demande</dd></div>
+      <dl class="details-list">
+        <div><dt>Height</dt><dd>183 <span>CM</span></dd></div>
+        <div><dt>Weight</dt><dd>78 <span>KG</span></dd></div>
+        <div><dt>Build</dt><dd>Athletic / toned</dd></div>
+        <div><dt>Representation</dt><dd>Independent</dd></div>
+        <div><dt>Availability</dt><dd>On request</dd></div>
       </dl>
     </section>
 
     <section class="contact-section" id="contact" aria-labelledby="contact-title">
-      <div class="contact-section__intro" data-reveal>
-        <p class="eyebrow"><span class="eyebrow__mark"></span> Projets & bookings</p>
-        <h2 id="contact-title">Parlons<br /><em>du prochain.</em></h2>
+      <div class="contact-section__intro">
+        <p class="eyebrow"><span class="signal-dot"></span> Projects / bookings</p>
+        <h2 id="contact-title" data-motion="heading">MAKE<br /><em>CONTACT.</em></h2>
         <a class="contact-email" href="mailto:aziz.tlili900@gmail.com">aziz.tlili900@gmail.com <span aria-hidden="true">↗</span></a>
       </div>
-      <form class="contact-form" action="https://formsubmit.co/ajax/aziz.tlili900@gmail.com" method="POST" data-reveal>
-        <input type="hidden" name="_subject" value="Nouvelle demande — Portfolio Aziz Modele" />
+      <form class="contact-form" action="https://formsubmit.co/ajax/aziz.tlili900@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New booking request — Aziz Modele" />
         <input type="hidden" name="_template" value="table" />
         <input type="hidden" name="_captcha" value="false" />
-        <label for="name">Votre nom</label>
-        <input id="name" name="name" type="text" autocomplete="name" placeholder="Nom" required />
-        <label for="email">Votre e-mail</label>
-        <input id="email" name="email" type="email" autocomplete="email" placeholder="nom@exemple.com" required />
-        <label for="message">Votre projet</label>
-        <textarea id="message" name="message" rows="3" placeholder="Quelques mots sur le projet" required></textarea>
-        <button class="submit-button" type="submit"><span>Envoyer le message</span><span aria-hidden="true">↗</span></button>
+        <label for="name">Your name</label>
+        <input id="name" name="name" type="text" autocomplete="name" placeholder="Name" required />
+        <label for="email">Your e-mail</label>
+        <input id="email" name="email" type="email" autocomplete="email" placeholder="name@example.com" required />
+        <label for="message">Project details</label>
+        <textarea id="message" name="message" rows="3" placeholder="Tell us about the project" required></textarea>
+        <button class="submit-button" type="submit"><span>Send inquiry</span><span aria-hidden="true">↗</span></button>
         <p class="form-status" role="status" aria-live="polite"></p>
       </form>
     </section>
   </main>
 
-  <dialog class="lightbox" aria-label="Photographie agrandie">
-    <button class="lightbox__close" type="button" aria-label="Fermer la photographie">Fermer <span aria-hidden="true">×</span></button>
-    <button class="lightbox__step lightbox__step--previous" type="button" aria-label="Photographie précédente">←</button>
+  <dialog class="lightbox" aria-label="Expanded photograph">
+    <button class="lightbox__close" type="button" aria-label="Close photograph">Close <span aria-hidden="true">×</span></button>
+    <button class="lightbox__step lightbox__step--previous" type="button" aria-label="Previous photograph">←</button>
     <figure class="lightbox__figure">
       <img class="lightbox__image" alt="" />
       <figcaption class="lightbox__caption"></figcaption>
     </figure>
-    <button class="lightbox__step lightbox__step--next" type="button" aria-label="Photographie suivante">→</button>
+    <button class="lightbox__step lightbox__step--next" type="button" aria-label="Next photograph">→</button>
     <span class="lightbox__count" aria-live="polite"></span>
   </dialog>
 
   <footer class="site-footer">
-    <a class="wordmark wordmark--footer" href="#accueil"><span class="wordmark__monogram">AM</span><span class="wordmark__name">Aziz<br />Modele</span></a>
-    <span>Modèle indépendant · Bookings</span>
-    <a href="#accueil" class="back-to-top">Retour en haut ↑</a>
-    <span class="site-footer__copyright">© 2026</span>
+    <a class="brand brand--footer" href="#home"><span class="brand__symbol">AM<span>/</span></span><span class="brand__name">Aziz<br />Modele</span></a>
+    <span>Independent model / bookings</span>
+    <a href="#home" class="back-to-top">Back to top ↑</a>
+    <span class="site-footer__copyright">© 2026 / AM</span>
   </footer>
 </body>
 </html>
