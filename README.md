@@ -28,4 +28,6 @@ Open <http://localhost:8000> in a browser. There is no build step or runtime fra
 
 ## Deployment
 
-GitHub Pages serves the root of the `master` branch. Push commits to publish updates.
+The public site is served from `AzizTliliMiageM1/aziz-modele-portfolio` on GitHub Pages (`master`, repository root).
+
+This development checkout pushes to the private `portfolio-aziz` repository. GitHub Pages is not available for that private repository on the current plan, so pushes there alone do not update the public site. Publish site changes to the public mirror's `master` branch.
