@@ -4,12 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#101611" />
-  <meta name="description" content="Aziz Modele — independent model portfolio. Portrait, editorial, and booking information." />
-  <meta property="og:title" content="Aziz Modele — Visual Dossier" />
-  <meta property="og:description" content="Selected portraits and image studies by Aziz Modele." />
+  <meta name="description" content="Aziz Modele — independent streetwear model portfolio. Seven looks, photographed in their own element." />
+  <meta property="og:title" content="Aziz Modele — Street Edit" />
+  <meta property="og:description" content="A personal streetwear lookbook by Aziz Modele." />
   <meta property="og:image" content="PP/optimized/01-rooftop.jpg" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <title>Aziz Modele — Visual Dossier</title>
+  <title>Aziz Modele — Street Edit</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
@@ -21,6 +21,16 @@
 <body>
   <a class="skip-link" href="#content">Skip to content</a>
   <div class="page-progress" aria-hidden="true"><span></span></div>
+  <div class="entry-sequence" aria-hidden="true">
+    <span class="entry-sequence__panel entry-sequence__panel--left"></span>
+    <span class="entry-sequence__panel entry-sequence__panel--right"></span>
+    <div class="entry-sequence__signature">
+      <span class="entry-sequence__index">AZIZ MODELE / VISUAL BOOK</span>
+      <span class="entry-sequence__word">AM</span>
+      <span class="entry-sequence__line"></span>
+      <span class="entry-sequence__edition">Independent model / 2026</span>
+    </div>
+  </div>
 
   <header class="site-header">
     <a class="brand" href="#home" aria-label="Aziz Modele, home">
@@ -31,7 +41,7 @@
       <span></span><span></span>
     </button>
     <nav class="site-nav" id="main-nav" aria-label="Main navigation">
-      <a href="#images"><span class="nav-index">01</span> Images</a>
+      <a href="#images"><span class="nav-index">01</span> Looks</a>
       <a href="#profile"><span class="nav-index">02</span> Profile</a>
       <a href="#details"><span class="nav-index">03</span> Details</a>
       <a class="site-nav__contact" href="#contact">Bookings <span aria-hidden="true">↗</span></a>
@@ -47,17 +57,19 @@
           <span class="hero-title__line"><span>AZIZ</span></span>
           <span class="hero-title__line hero-title__line--accent"><span>MODELE</span></span>
         </h1>
-        <p class="hero__statement">Presence<br />in a different light.</p>
+        <p class="hero__statement">Streetwear<br />in motion.</p>
         <div class="hero__actions">
-          <a class="action-link" href="#images">Explore the frames <span aria-hidden="true">↓</span></a>
-          <span class="hero__edition">Visual dossier / 01</span>
+          <a class="action-link" href="#images">Explore the looks <span aria-hidden="true">↓</span></a>
+          <span class="hero__edition">Street study / 01</span>
         </div>
       </div>
 
       <figure class="hero__visual">
-        <img class="hero__photo" src="PP/optimized/01-rooftop.jpg" alt="Aziz standing above the rooftops against an open evening sky." fetchpriority="high" width="1650" height="2200" />
-        <span class="hero__visual-index" aria-hidden="true">AM—001</span>
-        <figcaption class="hero__caption"><span>FRAME 01</span><span>OPEN AIR / STILL FORM</span></figcaption>
+        <button class="hero__photo-trigger" type="button" data-photo="PP/optimized/03-seaside.jpg" data-caption="01 / Blue hour — graphic layers" aria-label="Open blue hour streetwear portrait">
+          <img class="hero__photo" src="PP/optimized/03-seaside.jpg" alt="Aziz wearing a black graphic hoodie, cap and sunglasses beside the water at blue hour." fetchpriority="high" width="2048" height="1366" />
+          <span class="hero__visual-index" aria-hidden="true">LOOK / 01</span>
+        </button>
+        <figcaption class="hero__caption"><span>BLUE HOUR</span><span>GRAPHIC LAYERS / 01</span></figcaption>
       </figure>
 
       <div class="hero__measure" aria-hidden="true"><span>183 CM</span><span>78 KG</span><span>INDEPENDENT</span></div>
@@ -73,61 +85,63 @@
     <section class="work-section" id="images" aria-labelledby="images-title">
       <div class="section-heading" data-motion="heading">
         <div class="section-heading__title-wrap">
-          <p class="eyebrow"><span class="signal-dot"></span> Selected images / 01—06</p>
-          <h2 id="images-title"><span>LOOK</span><em>BOOK</em></h2>
+          <p class="eyebrow"><span class="signal-dot"></span> Streetwear selection / 02—07</p>
+          <h2 id="images-title"><span>STREET</span><em>EDIT</em></h2>
         </div>
-        <p class="section-heading__note">Portrait, silhouette, after dark.<br />A study in changing atmospheres.</p>
+        <p class="section-heading__note">Seven looks. No uniform.<br />A personal study in layers and silhouette.</p>
       </div>
 
-      <div class="work-grid">
-        <button class="look look--mono" type="button" data-motion="photo" data-photo="PP/optimized/07-monochrome.jpg" data-caption="01 / Form study — monochrome" aria-label="Open monochrome form study">
-          <img src="PP/optimized/07-monochrome.jpg" alt="Full-length black-and-white portrait of Aziz in direct sunlight." loading="lazy" decoding="async" width="1366" height="2048" />
-          <span class="look__index">01</span>
-          <span class="look__caption"><span>FORM STUDY</span><span>MONO / 01</span></span>
-          <span class="look__open" aria-hidden="true">↗</span>
-        </button>
+      <div class="work-gallery" aria-label="Six additional unique photographs, frames 02 through 07">
+        <div class="work-grid">
+          <div class="work-note" aria-label="Visual note">
+            <span class="work-note__index">WARDROBE NOTES / AM—07</span>
+            <p>Built around<br /><em>your point of view.</em></p>
+            <span class="work-note__rule"></span>
+            <span class="work-note__coordinates">FORM / LIGHT / MOVEMENT</span>
+          </div>
 
-        <button class="look look--coast" type="button" data-motion="photo" data-photo="PP/optimized/03-seaside.jpg" data-caption="02 / Blue hour — open air" aria-label="Open blue hour portrait by the water">
-          <img src="PP/optimized/03-seaside.jpg" alt="Aziz in a dark jacket beside the water and a blue structure." loading="lazy" decoding="async" width="2048" height="1366" />
+        <button class="look look--coast" type="button" data-motion="photo" data-photo="PP/optimized/01-rooftop.jpg" data-caption="02 / Rooftop — easy silhouette" aria-label="Open rooftop streetwear portrait">
+          <span class="look__stage"><img src="PP/optimized/01-rooftop.jpg" alt="Aziz in an all-black casual look above the rooftops at sunset." loading="lazy" decoding="async" width="1650" height="2200" /></span>
           <span class="look__index">02</span>
-          <span class="look__caption"><span>BLUE HOUR</span><span>OPEN AIR / 02</span></span>
+          <span class="look__caption"><span>ROOFTOP FIT</span><span>EASY SILHOUETTE / 02</span></span>
           <span class="look__open" aria-hidden="true">↗</span>
         </button>
 
-        <div class="work-note" aria-label="Visual note">
-          <span class="work-note__index">FIELD NOTE / 03</span>
-          <p>One presence.<br /><em>New coordinates.</em></p>
-          <span class="work-note__rule"></span>
-          <span class="work-note__coordinates">LIGHT 48° / FORM 06°</span>
-        </div>
-
-        <button class="look look--red" type="button" data-motion="photo" data-photo="PP/optimized/09-red-facade.jpg" data-caption="03 / Signal red — architecture" aria-label="Open portrait in red architectural light">
-          <img src="PP/optimized/09-red-facade.jpg" alt="Aziz seated beneath a vivid red-lit facade." loading="lazy" decoding="async" width="1536" height="2048" />
+        <button class="look look--woodland" type="button" data-motion="photo" data-photo="PP/optimized/04-woodland.jpg" data-caption="03 / Woodland — quiet tension" aria-label="Open woodland portrait">
+          <span class="look__stage"><img src="PP/optimized/04-woodland.jpg" alt="Aziz in a woodland setting with sunlight in the leaves." loading="lazy" decoding="async" width="1800" height="1200" /></span>
           <span class="look__index">03</span>
-          <span class="look__caption"><span>SIGNAL RED</span><span>ARCHITECTURE / 03</span></span>
+          <span class="look__caption"><span>WOODLAND</span><span>QUIET TENSION / 03</span></span>
           <span class="look__open" aria-hidden="true">↗</span>
         </button>
 
-        <button class="look look--moon" type="button" data-motion="photo" data-photo="PP/optimized/08-moonlight.jpg" data-caption="04 / Lunar frame — after dark" aria-label="Open portrait beneath the night sky">
-          <img src="PP/optimized/08-moonlight.jpg" alt="Night portrait of Aziz beneath a dark sky and the moon." loading="lazy" decoding="async" width="1536" height="2048" />
+        <button class="look look--flash" type="button" data-motion="photo" data-photo="PP/optimized/05-flash.jpg" data-caption="04 / Direct flash — instant study" aria-label="Open direct flash portrait">
+          <span class="look__stage"><img src="PP/optimized/05-flash.jpg" alt="Direct flash portrait of Aziz at night." loading="lazy" decoding="async" width="1600" height="1200" /></span>
           <span class="look__index">04</span>
-          <span class="look__caption"><span>LUNAR FRAME</span><span>AFTER DARK / 04</span></span>
+          <span class="look__caption"><span>DIRECT FLASH</span><span>INSTANT STUDY / 04</span></span>
           <span class="look__open" aria-hidden="true">↗</span>
         </button>
 
-        <button class="look look--tower" type="button" data-motion="photo" data-photo="PP/optimized/10-castle.jpg" data-caption="05 / Night geometry — city study" aria-label="Open night portrait with the illuminated tower">
-          <img src="PP/optimized/10-castle.jpg" alt="Aziz in the foreground of a night street, with an illuminated tower behind him." loading="lazy" decoding="async" width="1536" height="2048" />
+        <button class="look look--riverside" type="button" data-motion="photo" data-photo="PP/optimized/06-riverside.jpg" data-caption="05 / Riverside — still in motion" aria-label="Open riverside portrait">
+          <span class="look__stage"><img src="PP/optimized/06-riverside.jpg" alt="Aziz by the river in soft daylight." loading="lazy" decoding="async" width="1800" height="1200" /></span>
           <span class="look__index">05</span>
-          <span class="look__caption"><span>NIGHT GEOMETRY</span><span>CITY STUDY / 05</span></span>
+          <span class="look__caption"><span>RIVERSIDE</span><span>STILL IN MOTION / 05</span></span>
           <span class="look__open" aria-hidden="true">↗</span>
         </button>
 
-        <button class="look look--flash" type="button" data-motion="photo" data-photo="PP/optimized/05-flash.jpg" data-caption="06 / Direct flash — instant study" aria-label="Open direct flash portrait">
-          <img src="PP/optimized/05-flash.jpg" alt="Direct flash portrait of Aziz at night." loading="lazy" decoding="async" width="1600" height="1200" />
+        <button class="look look--moon" type="button" data-motion="photo" data-photo="PP/optimized/08-moonlight.jpg" data-caption="06 / Lunar frame — after dark" aria-label="Open moonlight portrait">
+          <span class="look__stage"><img src="PP/optimized/08-moonlight.jpg" alt="Aziz in a moonlit night portrait." loading="lazy" decoding="async" width="1536" height="2048" /></span>
           <span class="look__index">06</span>
-          <span class="look__caption"><span>DIRECT FLASH</span><span>INSTANT STUDY / 06</span></span>
+          <span class="look__caption"><span>LUNAR FRAME</span><span>AFTER DARK / 06</span></span>
           <span class="look__open" aria-hidden="true">↗</span>
         </button>
+
+        <button class="look look--red" type="button" data-motion="photo" data-photo="PP/optimized/09-red-facade.jpg" data-caption="07 / Signal red — architecture" aria-label="Open portrait in red architectural light">
+          <span class="look__stage"><img src="PP/optimized/09-red-facade.jpg" alt="Aziz seated beneath a vivid red-lit facade." loading="lazy" decoding="async" width="1536" height="2048" /></span>
+          <span class="look__index">07</span>
+          <span class="look__caption"><span>SIGNAL RED</span><span>ARCHITECTURE / 07</span></span>
+          <span class="look__open" aria-hidden="true">↗</span>
+        </button>
+        </div>
       </div>
     </section>
 
@@ -136,16 +150,16 @@
         <p class="eyebrow"><span class="signal-dot"></span> Identity file / AM—07</p>
         <span class="profile-section__stamp">PROFILE<br />01:01</span>
       </div>
-      <div class="profile-section__body">
-        <figure class="profile-section__image">
-          <img src="PP/optimized/07-monochrome.jpg" alt="Black-and-white full-length portrait of Aziz." loading="lazy" decoding="async" width="1366" height="2048" />
-          <figcaption>FORM / MONOCHROME / 01</figcaption>
-        </figure>
+      <div class="profile-section__body profile-section__body--manifesto">
         <div class="profile-section__copy">
-          <p class="profile-section__kicker">The subject is never static.</p>
-          <h2 id="profile-title" data-motion="heading">A study<br />in <em>presence.</em></h2>
-          <p>Portrait, editorial and everyday frames, considered through line, light and the way a person occupies space.</p>
+          <p class="profile-section__kicker">Identity is movement.</p>
+          <h2 id="profile-title" data-motion="heading">Not a fixed<br /><em>image.</em></h2>
+          <p>Streetwear is personal: graphic layers, easy silhouettes and the details that make a look yours.</p>
           <a class="action-link action-link--dark" href="#details">Open profile data <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="profile-manifesto" aria-hidden="true">
+          <span>FORM</span><span>IN</span><span class="profile-manifesto__accent">MOTION<span>.</span></span>
+          <i>AM / 07</i>
         </div>
       </div>
     </section>
@@ -169,9 +183,9 @@
       <div class="contact-section__intro">
         <p class="eyebrow"><span class="signal-dot"></span> Projects / bookings</p>
         <h2 id="contact-title" data-motion="heading">MAKE<br /><em>CONTACT.</em></h2>
-        <a class="contact-email" href="mailto:aziz.tlili900@gmail.com">aziz.tlili900@gmail.com <span aria-hidden="true">↗</span></a>
+        <a class="contact-email" href="mailto:mdaziz.tlili@gmail.com">mdaziz.tlili@gmail.com <span aria-hidden="true">↗</span></a>
       </div>
-      <form class="contact-form" action="https://formsubmit.co/ajax/aziz.tlili900@gmail.com" method="POST">
+      <form class="contact-form" action="https://formsubmit.co/ajax/3c0d3b3a8f28827293f63c50b9923c38" method="POST">
         <input type="hidden" name="_subject" value="New booking request — Aziz Modele" />
         <input type="hidden" name="_template" value="table" />
         <input type="hidden" name="_captcha" value="false" />

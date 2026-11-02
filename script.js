@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } catch {
       submitButton.disabled = false;
       submitText.textContent = 'Try again';
-      formStatus.textContent = 'Unable to send. Please email aziz.tlili900@gmail.com.';
+      formStatus.textContent = 'Unable to send. Please email mdaziz.tlili@gmail.com directly.';
     }
   });
 
@@ -113,14 +113,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const titleLines = gsap.utils.toArray('.hero-title__line > span');
   const heroPhoto = document.querySelector('.hero__photo');
-  const desktopCanvas = window.matchMedia('(min-width: 1001px)').matches;
-  const heroTimeline = gsap.timeline({ defaults: { ease: 'power4.out' } });
+  const entry = document.querySelector('.entry-sequence');
+  const entryLeft = entry?.querySelector('.entry-sequence__panel--left');
+  const entryRight = entry?.querySelector('.entry-sequence__panel--right');
 
   gsap.set(titleLines, { yPercent: 118 });
-  gsap.set(heroPhoto, { clipPath: 'inset(0 0 100% 0)', scale: desktopCanvas ? 1.075 : 1 });
-  heroTimeline
-    .to(titleLines, { yPercent: 0, duration: 0.95, stagger: 0.12 }, 0.12)
-    .to(heroPhoto, { clipPath: 'inset(0 0 0% 0)', scale: 1, duration: 1.3, ease: 'power3.inOut' }, 0.2);
+  gsap.set(heroPhoto, { clipPath: 'inset(0 0 100% 0)', scale: 1.12 });
+  gsap.set(['.hero__eyebrow', '.hero__statement', '.hero__actions'], { y: 20, opacity: 0 });
+
+  if (entry && entryLeft && entryRight) {
+    entry.classList.add('is-active');
+    const entryFailsafe = window.setTimeout(() => entry.classList.remove('is-active'), 4000);
+    gsap.set('.entry-sequence__word', { scale: 0.76, opacity: 0 });
+    gsap.set('.entry-sequence__line', { scaleX: 0, transformOrigin: 'center center' });
+    gsap.set(['.entry-sequence__index', '.entry-sequence__edition'], { opacity: 0 });
+
+    gsap.timeline({
+      defaults: { ease: 'power4.out' },
+      onComplete: () => {
+        window.clearTimeout(entryFailsafe);
+        entry.classList.remove('is-active');
+      },
+    })
+      .to('.entry-sequence__word', { scale: 1, opacity: 1, duration: 0.62, ease: 'expo.out' }, 0.08)
+      .to('.entry-sequence__line', { scaleX: 1, duration: 0.42 }, 0.34)
+      .to(['.entry-sequence__index', '.entry-sequence__edition'], { opacity: 1, duration: 0.32, stagger: 0.08 }, 0.32)
+      .to('.entry-sequence__signature', { opacity: 0, duration: 0.28 }, 0.96)
+      .to(entryLeft, { xPercent: -100, duration: 1.05, ease: 'power4.inOut' }, 1.08)
+      .to(entryRight, { xPercent: 100, duration: 1.05, ease: 'power4.inOut' }, 1.08)
+      .to(heroPhoto, { clipPath: 'inset(0)', scale: 1, duration: 1.2, ease: 'power3.inOut' }, 1.12)
+      .to(titleLines, { yPercent: 0, duration: 0.88, stagger: 0.1, ease: 'power4.out' }, 1.22)
+      .to(['.hero__eyebrow', '.hero__statement', '.hero__actions'], { y: 0, opacity: 1, duration: 0.52, stagger: 0.08 }, 1.58);
+  } else {
+    gsap.set(heroPhoto, { clipPath: 'inset(0)', scale: 1 });
+    gsap.set(titleLines, { yPercent: 0 });
+    gsap.set(['.hero__eyebrow', '.hero__statement', '.hero__actions'], { y: 0, opacity: 1 });
+  }
 
   gsap.to(heroPhoto, {
     yPercent: -6,
@@ -128,22 +156,63 @@ document.addEventListener('DOMContentLoaded', () => {
     scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 0.65 },
   });
 
-  gsap.utils.toArray('[data-motion="photo"]').forEach((frame) => {
-    const image = frame.querySelector('img');
+  gsap.utils.toArray('[data-motion="photo"]').forEach((frame, index) => {
+    const stage = frame.querySelector('.look__stage');
+    const image = stage?.querySelector('img');
     const caption = frame.querySelector('.look__caption');
-    gsap.fromTo(image, { clipPath: 'inset(0 0 100% 0)', scale: 1.06 }, {
-      clipPath: 'inset(0 0 0% 0)',
+    const indexTag = frame.querySelector('.look__index');
+    if (!stage || !image || !caption || !indexTag) return;
+
+    const rotation = index % 2 === 0 ? -3.5 : 3.5;
+    const photoTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: frame,
+        start: 'top 92%',
+        end: 'center 42%',
+        scrub: 0.65,
+        invalidateOnRefresh: true,
+      },
+    });
+
+    photoTimeline.fromTo(stage, {
+      y: 42,
+      scale: 0.94,
+      rotationY: rotation,
+      opacity: 0.72,
+    }, {
+      y: 0,
       scale: 1,
-      ease: 'none',
-      scrollTrigger: { trigger: frame, start: 'top 88%', end: 'top 34%', scrub: 0.7 },
-    });
-    gsap.fromTo(caption, { yPercent: 105, opacity: 0 }, {
-      yPercent: 0,
+      rotationY: 0,
       opacity: 1,
-      duration: 0.5,
-      ease: 'power3.out',
-      scrollTrigger: { trigger: frame, start: 'top 62%', toggleActions: 'play none none reverse' },
-    });
+      duration: 1,
+      ease: 'none',
+    }, 0);
+    photoTimeline.fromTo(image, {
+      scale: 1.2,
+      yPercent: 5,
+      clipPath: 'inset(8% 9%)',
+      filter: 'saturate(0.86) contrast(1.02)',
+    }, {
+      scale: 1,
+      yPercent: 0,
+      clipPath: 'inset(0)',
+      filter: 'saturate(1.08) contrast(1.05)',
+      duration: 1,
+      ease: 'none',
+    }, 0);
+    photoTimeline.fromTo(indexTag, { opacity: 0, scale: 0.72, rotation: -18 }, {
+      opacity: 1,
+      scale: 1,
+      rotation: 0,
+      duration: 0.42,
+      ease: 'none',
+    }, 0.14);
+    photoTimeline.fromTo(caption, { opacity: 0, y: 14 }, {
+      opacity: 1,
+      y: 0,
+      duration: 0.4,
+      ease: 'none',
+    }, 0.32);
   });
 
   gsap.utils.toArray('[data-motion="heading"]').forEach((heading) => {
@@ -156,12 +225,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  gsap.fromTo('.profile-section__image', { clipPath: 'inset(0 0 100% 0)', scale: 1.035 }, {
-    clipPath: 'inset(0 0 0% 0)',
-    scale: 1,
-    ease: 'none',
-    scrollTrigger: { trigger: '.profile-section', start: 'top 80%', end: 'top 32%', scrub: 0.65 },
+  gsap.fromTo('.profile-manifesto > span', { yPercent: 110, opacity: 0 }, {
+    yPercent: 0,
+    opacity: 1,
+    duration: 0.85,
+    stagger: 0.12,
+    ease: 'power3.out',
+    scrollTrigger: { trigger: '.profile-manifesto', start: 'top 82%', toggleActions: 'play none none reverse' },
   });
 
+  gsap.to('.signal-strip__track', { xPercent: -50, duration: 24, repeat: -1, ease: 'none' });
   ScrollTrigger.refresh();
 });
