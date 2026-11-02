@@ -87,12 +87,15 @@ document.addEventListener('DOMContentLoaded', () => {
     submitButton.disabled = true;
     submitText.textContent = 'Sending';
     formStatus.textContent = '';
+    const requestController = new AbortController();
+    const requestTimeout = window.setTimeout(() => requestController.abort(), 15000);
 
     try {
       const response = await fetch(form.action, {
         method: 'POST',
         body: new FormData(form),
         headers: { Accept: 'application/json' },
+        signal: requestController.signal,
       });
       if (!response.ok) throw new Error('Submission failed');
       submitText.textContent = 'Inquiry sent';
@@ -102,6 +105,8 @@ document.addEventListener('DOMContentLoaded', () => {
       submitButton.disabled = false;
       submitText.textContent = 'Try again';
       formStatus.textContent = 'Unable to send. Please email mdaziz.tlili@gmail.com directly.';
+    } finally {
+      window.clearTimeout(requestTimeout);
     }
   });
 
